@@ -1,0 +1,8 @@
+<template name="asideBtn">
+    <view class="aside-btn-column {{item.side}}" style="top:{{item.top}}%;" wx:if="{{pageConfig.aside_btn}}" wx:for="{{pageConfig.aside_btn}}" wx:key="index">
+        <view class="col-item" wx:for="{{item.btn}}" wx:for-item="btn" wx:key="open_appid">
+            <button bindtap="_asideBtnTap" data-appid="{{btn.open_appid}}" data-opentype="{{btn.open_type}}" data-path="{{btn.url}}" data-qrcode="{{btn.qrcode}}" data-version="{{btn.version}}" formType="submit" openType="{{btn.open_type}}"></button>
+            <image mode="widthFix" src="{{btn.thumb}}" wx:if="{{btn.thumb}}"></image>
+        </view>
+    </view>
+</template>

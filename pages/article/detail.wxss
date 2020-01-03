@@ -1,0 +1,226 @@
+@import "../../wxParse/wxParse.wxss";
+
+@-webkit-keyframes showUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.btm-tabs {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    bottom: 20rpx;
+    width: 92%;
+    border-radius: 100rpx;
+    background-color: #333;
+    height: 100rpx;
+    overflow: visible;
+}
+
+.btm-tabs image {
+    width: 44rpx;
+    margin-right: 12rpx;
+}
+
+.btm-tabs .btn {
+    position: relative;
+    flex: 1;
+    background-color: transparent;
+    font-size: 40rpx;
+    height: 70%;
+    line-height: 100rpx;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.btm-tabs .btn:first-child {
+    border-right: 2rpx solid #fff;
+}
+
+.tips {
+    opacity: 0;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 24rpx;
+    background: #333;
+    color: #00FF00;
+    font-size: 36rpx;
+    bottom: 120rpx;
+    z-index: 999;
+    line-height: normal;
+    padding: 20rpx;
+    text-align: left;
+    overflow: visible;
+    animation: showUp 0.1s 5s both;
+}
+
+.tips::after {
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    transform: rotate(45deg) translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: -15rpx;
+    background: #333;
+    border: none;
+}
+
+@import "../../wuBaseWxss/1.wxss";
+
+.container {
+    padding: 20rpx 20rpx 140rpx 20rpx;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+@-webkit-keyframes share {
+    from {
+        transform: scaleX(0.8);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes share {
+    from {
+        transform: scaleX(0.8);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes changeColor {
+    0% {
+        color: #fff;
+    }
+
+    30% {
+        color: red;
+    }
+
+    70% {
+        color: yellow;
+    }
+
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        color: #fff;
+    }
+
+    30% {
+        color: red;
+    }
+
+    70% {
+        color: yellow;
+    }
+
+    100% {
+        color: #fff;
+    }
+}
+
+.list-item {
+    background: #eee;
+}
+
+.article-title {
+    font-size: 44rpx;
+}
+
+.date {
+    color: #999;
+    font-size: 30rpx;
+    text-align: right;
+    margin: 16rpx auto;
+}
+
+.section-head {
+    background: #eee;
+    padding: 20rpx;
+    font-size: 46rpx;
+    margin: 30rpx auto;
+}
+
+.section-head::before {
+    content: "";
+    border: 6rpx solid red;
+    margin-right: 24rpx;
+}
+
+.audio {
+    text-align: center;
+}
+
+.audio audio {
+    text-align: left;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30rpx;
+}
+
+.btn-group button {
+    height: 80rpx;
+    color: #fff;
+    background: green;
+    font-size: 40rpx;
+    line-height: 80rpx;
+    margin: 0 30rpx;
+    border-radius: 12rpx;
+    flex: 1;
+    margin-top: 40rpx;
+}
+
+.btn-group button:first-child {
+    background: red;
+    animation: share 0.6s linear infinite alternate;
+}
+
+.btm-tabs .btn:last-child {
+    color: #0f0;
+}
+
+.refresh image {
+    display: block;
+    width: 80%;
+    margin: 20rpx auto;
+}

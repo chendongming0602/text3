@@ -1,0 +1,18 @@
+<z-panel class="panel" hideBorder="false">
+    <view class="content">
+        <view class="user-avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="user-info">
+            <open-data type="userNickName"></open-data>
+            <text class="credit">25分</text>
+        </view>
+    </view>
+</z-panel>
+<view class="nav-bar">
+    <z-cell-group>
+        <z-cell isLink url="/pages/favourite/favourite">
+            <text class="title">我的收藏</text>
+        </z-cell>
+    </z-cell-group>
+</view>

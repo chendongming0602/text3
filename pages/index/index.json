@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "banner-swiper": "../../components/bannerSwiper/swiper",
+        "ad-comp": "../../components/ad/ad"
+    }
+}

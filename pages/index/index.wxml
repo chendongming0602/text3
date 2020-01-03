@@ -1,0 +1,25 @@
+<import src="../../templates/template.wxml"></import>
+<import src="../../asideTemplate/asideBtn.wxml"></import>
+<view class="tag" hidden="{{hideTag}}">
+    <text class="tagtxt">点击</text>
+    <image class="tagpic" src="/images/icons/tag.png"></image>
+    <text class="tagtxt">添加到【我的小程序】</text>
+    <image class="tagshou" src="/images/icons/shou.png"></image>
+    <view class="crows"></view>
+    <image bindtap="closeTag" class="cha" src="/images/icons/cha.png"></image>
+</view>
+<form bindsubmit="_formSubmit" reportSubmit="true">
+    <ad-comp adv="{{adList}}" circlur="true"></ad-comp>
+    <ad unit="{{pageConfig.txts.unit_id}}" wx:if="{{pageConfig.txts.unit_id}}"></ad>
+    <banner-swiper bannerList="{{bannerList}}" swiperConfig="{{swiperConfig}}"></banner-swiper>
+    <view class="container">
+        <block wx:for="{{lists}}" wx:key="id">
+            <template is="indexList" data="{{index:index,item:item}}"></template>
+            <view class="advert" wx:if="{{index%itemNum==0&&pageConfig.txts.unit_id}}">
+                <template is="showAd" data="{{...pageConfig.txts}}"></template>
+            </view>
+        </block>
+    </view>
+</form>
+<template is="asideBtn" data="{{pageConfig:pageConfig}}"></template>
+<template is="refresh" data></template>

@@ -1,0 +1,12 @@
+<import src="../../templates/template.wxml"></import>
+<form bindsubmit="_formSubmit" reportSubmit="true">
+    <view class="container h-100">
+        <block wx:if="{{lists.length>0}}">
+            <template is="faviList" data="{{index:index,...item}}" wx:for="{{lists}}" wx:key="content_id"></template>
+        </block>
+        <view class="nodata" wx:else>暂无收藏</view>
+        <view style="margin-top:18rpx;">
+            <template is="showAd" data="{{...pageConfig.txts}}"></template>
+        </view>
+    </view>
+</form>

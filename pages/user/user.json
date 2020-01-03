@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "个人中心",
+    "usingComponents": {
+        "z-cell-group": "/zanui/cell-group/index",
+        "z-cell": "/zanui/cell/index",
+        "z-panel": "/zanui/panel/index",
+        "z-icon": "/zanui/icon/index"
+    }
+}

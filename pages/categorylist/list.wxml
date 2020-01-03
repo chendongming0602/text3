@@ -1,0 +1,8 @@
+<import src="../../templates/template.wxml"></import>
+<view class="category-sublist">
+    <template is="showAd" data="{{...pageConfig.txts}}"></template>
+    <view class="sucate-title p-rel">
+        <text class="vh-align-center">{{title}}</text>
+    </view>
+    <template is="thumbList" data="{{...item}}" wx:for="{{cateList}}" wx:key="index"></template>
+</view>

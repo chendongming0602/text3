@@ -1,0 +1,52 @@
+.category {
+    border: 1px solid transparent;
+}
+
+.category_title {
+    font-size: 42rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 30rpx;
+    margin-top: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: solid 1px #e5e5e5;
+    background: #fff;
+    color: #888;
+}
+
+.category_title:first-child {
+    margin-top: 0px;
+}
+
+.category-list {
+    display: flex;
+    padding: 20rpx 5rpx;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.list-item {
+    box-sizing: border-box;
+    width: 33.3%;
+    border: 15rpx solid transparent;
+    margin-bottom: 2%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cate-thumb {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 100rpx;
+}
+
+.cate-name {
+    width: 100%;
+    bottom: 0;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color: #333;
+}

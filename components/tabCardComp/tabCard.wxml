@@ -1,0 +1,3 @@
+<view class="tab-card">
+    <view bindtap="_tabChange" class="tab-item {{currentIndex==index?'on':''}}" data-id="{{index}}" wx:for="{{items}}" wx:key="index">{{item}}</view>
+</view>

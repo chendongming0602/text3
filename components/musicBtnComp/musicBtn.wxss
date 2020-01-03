@@ -1,0 +1,54 @@
+@-webkit-keyframes musicPlay {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes musicPlay {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn {
+    position: fixed;
+    width: 92rpx;
+    height: 92rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 20rpx;
+    transform: rotate(0);
+    background-color: rgba(0,0,0,.6);
+}
+
+.btn::after {
+    border: none;
+    border-radius: 50%;
+}
+
+.btn image {
+    width: 100%;
+}
+
+.play {
+    animation: musicPlay 3s linear infinite;
+}
+
+.off::after {
+    position: absolute;
+    width: 100%;
+    height: 2rpx;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    background-color: #ddd;
+}

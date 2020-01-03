@@ -1,0 +1,26 @@
+.user-avatar {
+    width: 144rpx;
+    height: 144rpx;
+    margin-right: 40rpx;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.content {
+    padding: 20rpx 27rpx;
+    display: flex;
+    align-items: center;
+    font-size: 39rpx;
+}
+
+.nav-bar {
+    margin-top: 27rpx;
+}
+
+.nav-bar .title {
+    font-size: 36rpx;
+}

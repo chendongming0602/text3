@@ -1,0 +1,5 @@
+<form reportSubmit="true">
+    <button bindtap="_controlMusic" class="btn p-rel {{isPlay?'play':'off'}}" formType="submit" style="top:{{pos.top}};left:{{pos.left}};right:{{pos.right}};bottom:{{pos.bottom}}">
+        <image mode="widthFix" src="{{btnBgImage}}"></image>
+    </button>
+</form>

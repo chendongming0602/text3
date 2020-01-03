@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/latest/latest",
+    "pages/favourite/favourite",
+    "pages/article/detail",
+    "pages/category/category",
+    "pages/categorylist/list",
+    "pages/user/user"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#CC0000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#555555",
+    "selectedColor": "#CC0000",
+    "borderStyle": "white",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "精选",
+        "iconPath": "images/icons/icon_select_0.png",
+        "selectedIconPath": "images/icons/icon_select_1.png"
+      },
+      {
+        "pagePath": "pages/latest/latest",
+        "text": "热门",
+        "iconPath": "images/icons/icon_hot_0.png",
+        "selectedIconPath": "images/icons/icon_hot_1.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/icons/icon_category_1.png",
+        "selectedIconPath": "images/icons/icon_category_0.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/icons/icon_me_0.png",
+        "selectedIconPath": "images/icons/icon_me_1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

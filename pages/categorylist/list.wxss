@@ -1,0 +1,44 @@
+.list-item {
+    padding: 10rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 8rpx;
+    height: 140rpx;
+    margin-bottom: 30rpx;
+}
+
+.list-item image {
+    width: 140rpx;
+}
+
+.content {
+    overflow: hidden;
+    font-size: 32rpx;
+    padding: 0 28rpx;
+    max-height: 92rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    flex: 1;
+}
+
+.category-sublist {
+    padding: 0 30rpx;
+    border: 1px solid transparent;
+}
+
+.sucate-title {
+    border-top: 0 solid #eee;
+    font-size: 40rpx;
+    height: 100rpx;
+    text-align: center;
+    width: 60%;
+    font-weight: 700;
+    margin: 0 auto 25rpx auto;
+    border-bottom: 1px solid #ddd;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}

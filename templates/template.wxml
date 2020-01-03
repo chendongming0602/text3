@@ -1,0 +1,78 @@
+<template name="showAd">
+    <ad unitId="{{unit_id}}" wx:if="{{unit_id}}"></ad>
+</template>
+<template name="prizeList">
+    <view class="p-list-item">
+        <image class="thumb" mode="widthFix" src="{{thumb}}"></image>
+        <view class="p-list-mid">
+            <view class="title">{{title}}</view>
+            <view class="cost">消耗:{{credit}}积分</view>
+        </view>
+        <view class="p-list-rt">
+            <button bindtap="_buyPdt" class="btn" data-credit="{{credit}}" data-goods="{{title}}" data-id="{{id}}" data-index="{{index}}">立即兑换</button>
+            <view class="num">库存：{{inventory_num}}</view>
+        </view>
+    </view>
+</template>
+<template name="thumbList">
+    <navigator class="list-item" url="/pages/article/detail?aid={{id}}">
+        <image class="thumb" mode="widthFix" src="{{thumb}}"></image>
+        <view class="content">{{name}}</view>
+    </navigator>
+</template>
+<template name="addFav">
+    <view bindtap="_addFav" class="refresh">
+        <image mode="widthFix" src="../../images/icons/icon_favi.png"></image> 收藏</view>
+</template>
+<template name="refresh">
+    <view bindtap="_nextPage" class="refresh">
+        <image mode="widthFix" src="../../images/icons/fresh.png"></image> 换一批</view>
+</template>
+<template name="btmTabs">
+    <view class="btm-tabs h-align-center">
+        <navigator class="btn" openType="switchTab" url="/pages/index/index">
+            <image mode="widthFix" src="../../images/icons/icon_home.png"></image>最新热文</navigator>
+        <button class="btn" openType="share">
+            <view class="tips {{showTips?'hide':''}}">喜欢这篇图文，转发给好友吧</view>
+            <image mode="widthFix" src="../../images/icons/icon_share.png"></image>转发给朋友
+    </button>
+    </view>
+</template>
+<template name="faviList">
+    <view class="list-item p-rel">
+        <view catchtap="_toDetail" class="item-content" data-aid="{{content_id}}">
+            <view class="thumb">
+                <image mode="widthFix" src="{{thumb}}"></image>
+            </view>
+            <view class="title">{{name}}</view>
+            <button catchtap="_deleteFav" class="btn" data-aid="{{content_id}}" data-index="{{index}}" hoverClass="hover-delete">取消</button>
+        </view>
+    </view>
+</template>
+<template name="hotList">
+    <view style="margin-top:30rpx;" wx:if="{{unit_id}}">
+        <template is="showAd" data="{{unit_id:unit_id}}"></template>
+    </view>
+    <button bindtap="_toDetail" class="list-item p-rel" data-aid="{{id}}" formType="submit" hoverClass="hover-class">
+        <view class="item-content">
+            <view class="item-cnt-title">{{name}}</view>
+            <view class="item-cnt-thumb">
+                <image mode="widthFix" src="{{thumb}}"></image>
+            </view>
+        </view>
+    </button>
+</template>
+<template name="indexList">
+    <view class="list-item">
+        <block wx:for="{{item}}" wx:for-item="content" wx:key="index">
+            <button bindtap="_toDetail" class="p-rel head-image" data-aid="{{content.id}}" formType="submit" hoverClass="hover-class" wx:if="{{index==0}}">
+                <image mode="aspectFill" src="{{content.thumb}}"></image>
+                <view class="title h-align-center">{{content.name}}</view>
+            </button>
+            <button bindtap="_toDetail" class="sub-item p-rel" data-aid="{{content.id}}" formType="submit" hoverClass="hover-class" wx:else>
+                <view class="sub-title">{{content.name}}</view>
+                <image mode="aspectFill" src="{{content.thumb}}"></image>
+            </button>
+        </block>
+    </view>
+</template>

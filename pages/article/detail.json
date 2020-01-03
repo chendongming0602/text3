@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "music-btn": "../../components/musicBtnComp/musicBtn"
+    }
+}

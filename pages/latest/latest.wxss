@@ -1,0 +1,11 @@
+@import "../../wuBaseWxss/1.wxss";
+
+button {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 0 30rpx;
+    border: 1px solid transparent;
+}

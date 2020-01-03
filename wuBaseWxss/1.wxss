@@ -1,0 +1,41 @@
+.list-item {
+    margin-top: 30rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    text-align: left;
+    max-height: 170rpx;
+}
+
+.item-content .item-cnt-title {
+    flex: 8;
+    font-size: 44rpx;
+    color: #333;
+    margin-right: 20rpx;
+    box-sizing: border-box;
+    line-height: 50rpx;
+    height: 150rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.item-content .item-cnt-thumb {
+    flex: 6;
+    overflow: hidden;
+    max-height: 260rpx;
+    border-radius: 12rpx;
+}
+
+.item-cnt-thumb image {
+    width: 100%;
+    border-radius: 12rpx;
+}

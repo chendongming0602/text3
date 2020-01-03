@@ -1,0 +1,27 @@
+<swiper autoplay="{{autoplay}}" circular="{{circular}}" class="swiperClass" duration="800" style="height:{{height}};" vertical="{{vertical}}" wx:if="{{!close&&adv.length>0}}">
+    <swiper-item wx:for="{{adv}}" wx:key="index">
+        <view class="main mainClass" style="background-color:{{backgeoundColor}};height:{{height}}">
+            <view bindtap="closeFn" class="close closeClass" style="background:{{closeColor}}">
+                <image mode="widthFix" src="{{closeSrc}}"></image>
+            </view>
+            <view bindtap="openFn" class="body" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:if="{{item.open_type!='wxapp'}}">
+                <view class="img">
+                    <image mode="widthFix" src="{{item.thumb}}"></image>
+                </view>
+                <view class="txt txtClass" style="color:{{txtColor}}">{{item.intro}}</view>
+                <view class="message">
+                    <button class="btnClass" style="border-color:{{item.btn.border_color}};color:{{item.btn.btn_text_color}};background-color:{{item.btn.btn_color}}">{{item.btn.btn_text}}</button>
+                </view>
+            </view>
+            <navigator appId="{{item.open_appid}}" class="body" openType="navigate" path="{{item.url}}" target="miniProgram" wx:else>
+                <view class="img">
+                    <image mode="widthFix" src="{{item.thumb}}"></image>
+                </view>
+                <view class="txt txtClass" style="color:{{txtColor}}">{{item.intro}}</view>
+                <view class="message">
+                    <button class="btnClass" style="border-color:{{item.btn.border_color}};color:{{item.btn.btn_text_color}};background-color:{{item.btn.btn_color}}">{{item.btn.btn_text}}</button>
+                </view>
+            </navigator>
+        </view>
+    </swiper-item>
+</swiper>

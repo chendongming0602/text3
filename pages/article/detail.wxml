@@ -1,0 +1,28 @@
+<import src="../../templates/template.wxml"></import>
+<import src="../../asideTemplate/asideBtn.wxml"></import>
+<import src="../../wxParse/wxParse.wxml"></import>
+<view class="isloading" wx:if="{{isLoading}}">正在加载...</view>
+<block wx:else>
+    <form bindsubmit="_formSubmit" reportSubmit="true">
+        <view class="container p-rel" style="background:#ffffff url({{pageBg}});">
+            <view class="article-title" style="color:{{titleColor?titleColor:''}};">{{title}}</view>
+            <view class="date" style="color:{{titleColor?titleColor:''}};">{{updated_at}}</view>
+            <view class="audio" wx:if="{{audio}}">
+                <audio controls author="{{author}}" name="{{title}}" poster="{{thumb}}" src="{{audio}}"></audio>
+            </view>
+            <template is="showAd" data="{{...pageConfig.txts}}"></template>
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+            <view class="btn-group">
+                <button openType="share" type="success">转发给朋友</button>
+            </view>
+            <block wx:if="{{recommend.length>0}}">
+                <view class="section-head">更多精彩文章</view>
+                <template is="hotList" data="{{...item}}" wx:for="{{recommend}}" wx:key="id"></template>
+            </block>
+        </view>
+    </form>
+    <music-btn bgMusic="{{music}}" btnPos="{{btnPosition}}" wx:if="{{music}}"></music-btn>
+    <template is="asideBtn" data="{{pageConfig:pageConfig}}"></template>
+    <template is="btmTabs" data="{{showTips:showTips}}"></template>
+    <template is="addFav" data></template>
+</block>

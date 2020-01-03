@@ -1,0 +1,15 @@
+<view class="container {{wrapperClass}}" style="width:{{width}};" wx:if="{{bannerList.length>0}}">
+    <swiper autoplay="{{swiperDefault.autoplay}}" bindchange="_swiperChange" circular="{{swiperDefault.circular}}" indicatorActiveColor="{{swiperDefault.indicatorActiveColor}}" indicatorColor="{{swiperDefault.indicatorColor}}" indicatorDots="{{swiperDefault.indicatorDots}}" interval="{{swiperDefault.interval}}" nextMargin="{{swiperDefault.nextMargin}}" previousMargin="{{swiperDefault.previousMargin}}" style="height:{{swiperDefault.autoHeight?imgheights[current]+'rpx':swiperDefault.height+'rpx'}};">
+        <swiper-item wx:for="{{bannerList}}" wx:key="id">
+            <ad unitId="{{item.unit_id}}" wx:if="{{item.open_type=='ad'&&item.unit_id}}"></ad>
+            <view catchtap="_openMiniProgram" class="swiper-itme-wrapper" data-appid="{{item.open_appid||''}}" data-id="{{index}}" data-open_type="{{item.open_type||''}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:elif="{{item.open_type!='wxapp'}}">
+                <image bindload="_imageLoaded" data-id="{{index}}" mode="widthFix" src="{{item.thumb}}" wx:if="{{item.thumb}}"></image>
+                <view class="desc" wx:if="{{swiperDefault.hasDesc}}">{{item.title}}</view>
+            </view>
+            <navigator appId="{{item.open_appid}}" class="swiper-itme-wrapper" openType="navigate" path="{{item.url}}" target="miniProgram">
+                <image bindload="_imageLoaded" data-id="{{index}}" mode="widthFix" src="{{item.thumb}}" wx:if="{{item.thumb}}"></image>
+                <view class="desc" wx:if="{{swiperDefault.hasDesc}}">{{item.title}}</view>
+            </navigator>
+        </swiper-item>
+    </swiper>
+</view>
