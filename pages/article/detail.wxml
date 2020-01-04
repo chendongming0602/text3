@@ -11,7 +11,8 @@
                 <audio controls author="{{author}}" name="{{title}}" poster="{{thumb}}" src="{{audio}}"></audio>
             </view>
             <template is="showAd" data="{{...pageConfig.txts}}"></template>
-            <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+            <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"></template> -->
+            <rich-text nodes="{{content}}" space="nbsp"></rich-text>
             <view class="btn-group">
                 <button openType="share" type="success">转发给朋友</button>
             </view>

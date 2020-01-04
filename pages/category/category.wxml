@@ -4,8 +4,8 @@
     <block wx:for="{{categories}}" wx:key="id">
         <view class="category_title">{{item.title}}</view>
         <view class="category-list">
-            <navigator class="list-item p-rel" url="/pages/categorylist/list?cate={{cItem.id}}&title={{cItem.title}}" wx:for="{{item._child}}" wx:for-item="cItem" wx:key="id">
-                <image class="cate-thumb" mode="widthFix" src="{{cItem.thumb}}"></image>
+            <navigator hover-class="none" class="list-item p-rel" url="/pages/categorylist/list?cate={{cItem.id}}&title={{cItem.title}}" wx:for="{{item._child}}" wx:for-item="cItem" wx:key="id">
+                <image style="height:160rpx;min-height:160rpx" class="cate-thumb" mode="widthFix" src="{{cItem.thumb}}"></image>
                 <view class="cate-name">{{cItem.title}}</view>
             </navigator>
         </view>

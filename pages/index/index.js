@@ -29,7 +29,7 @@ Page({
         var a = this;
         t.default.request(function(e) {
             var i = t.default.settings;
-            console.log(i), a.setData({
+            /*console.log(i),*/ a.setData({
                 pageConfig: i,
                 itemNum: i.txts.ad_limit || ""
             });

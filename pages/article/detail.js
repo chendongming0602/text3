@@ -3,7 +3,7 @@ function t(t) {
         default: t
     };
 }
-
+import { rich } from '../../we7/libs/rich.js';//解析富文本
 var a = t(require("../../service/app.setting.js")), e = t(require("../../config/api.config.js")), i = t(require("../../service/service.js")), r = t(require("../../wxParse/wxParse.js"));
 
 getApp();
@@ -25,7 +25,8 @@ Page({
         pageBg: "",
         thumb: "",
         share_title: "",
-        isLoading: !0
+        isLoading: !0,
+        content:""
     },
     _init: function() {
         var t = this;
@@ -42,17 +43,21 @@ Page({
                 aid: this.data.aid
             },
             success: function(a) {
+              console.log(a)
                 a.data && a.data.error && wx.showModal({
                     title: "系统提示",
                     content: "" + a.data.msg,
                     showCancel: !1
                 });
+                
                 var e = a.data.data, i = e.content;
                 if (e && e.recommend) {
                     var s = e.recommend.length;
                     s > 0 && (e.recommend[parseInt(Math.random() * s)].unit_id = t.data.pageConfig.txts.unit_id);
                 }
-                r.default.wxParse("article", "html", i, t, 5), t.setData({
+                let richText = rich(i);//解析完成后的
+                // r.default.wxParse("article", "html", i, t, 5),
+                 t.setData({
                     title: e.name,
                     updated_at: e.updated_at,
                     recommend: e.recommend || [],
@@ -63,7 +68,8 @@ Page({
                     share_title: e.share_title || "",
                     audio: e.audio || "",
                     author: e.author || "",
-                    isLoading: !1
+                    isLoading: !1,
+                  content: richText
                 });
             }
         }), a.default.setNavBarTitle();
