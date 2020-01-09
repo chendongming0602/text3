@@ -3,7 +3,7 @@ function t(t) {
         default: t
     };
 }
-
+const ald = require('./we7/libs/ald-stat.js');
 var e = t(require("./service/service.js")), a = t(require("./config/api.config.js"));
 
 App({
