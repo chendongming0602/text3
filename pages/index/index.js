@@ -5,7 +5,7 @@ function a(a) {
 }
 
 var t = a(require("../../service/app.setting.js")), e = a(require("../../config/api.config.js")), i = a(require("../../service/service.js")), n = getApp();
-
+const APP=getApp();
 Page({
     data: {
         pageConfig: t.default.settings,
@@ -23,7 +23,14 @@ Page({
             interval: 3e3
         },
         closeDuration: 8e3,
-        hideTag: !1
+        hideTag: !1,
+        isPower:true,
+        isCheck:false
+    },
+    loginEvent(){
+      this.setData({
+        isPower:true
+      });
     },
     _init: function() {
         var a = this;
@@ -52,12 +59,30 @@ Page({
             }
         });
     },
-    onLoad: function(a) {},
+    onLoad: function(a) {
+      
+    },
+    allS(){
+      this.setData({
+        isPower: APP.userInfo.isPower,
+        isCheck: APP.isCheck
+      });
+    },
+    frameEvent() {//打开收藏提示框
+      this.selectComponent('#frame').showEvent();
+    },
     onShow: function() {
         var a = this;
         wx.getStorageSync("userInfo") ? this._init() : n.loginCallBack = function(t) {
             a._init();
         };
+      if (APP.isCallback) {
+        this.allS();
+      } else {
+        APP.callbackEvent = res => {
+          this.allS();
+        };
+      };
     },
     onHide: function() {},
     onUnload: function() {},

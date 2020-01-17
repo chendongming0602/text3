@@ -11,3 +11,4 @@
     </view>
 </form>
 <template is="asideBtn" data="{{pageConfig:pageConfig}}"></template>
+<login bind:loginEvent="loginEvent" wx:if="{{!isPower&&!isCheck}}"></login>

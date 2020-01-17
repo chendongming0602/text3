@@ -16,3 +16,4 @@
         </z-cell>
     </z-cell-group>
 </view>
+<login bind:loginEvent="loginEvent" wx:if="{{!isPower&&!isCheck}}"></login>

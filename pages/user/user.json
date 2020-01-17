@@ -4,6 +4,7 @@
         "z-cell-group": "/zanui/cell-group/index",
         "z-cell": "/zanui/cell/index",
         "z-panel": "/zanui/panel/index",
-        "z-icon": "/zanui/icon/index"
+        "z-icon": "/zanui/icon/index",
+        "login": "../../components/login/login"
     }
 }

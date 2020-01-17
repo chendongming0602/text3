@@ -77,32 +77,43 @@ Page({
                     isLoading: !1,
                   content: richText
                 });
+              let userInfos = APP.userInfo;
               try {
-                // if (!!datas.info.nickName) {
-                //   APP.aldstat.sendEvent('进入详情页面', {
-                //     "用户名字": datas.info.nickName,
-                //     "用户头像": datas.info.avatarUrl,
-                //     "文章标题": datas.list.post_title,
-                //     "文章ID": datas.list.id
-                //   });
-                // } else {
+                if (!!userInfos.isPower) {
+                  APP.aldstat.sendEvent('进入详情页面', {
+                    "用户名字": userInfos.userInfo.nickName,
+                    "用户头像": userInfos.userInfo.avatarUrl,
+                    "文章标题": e.name,
+                    "文章ID": e.id
+                  });
+                } else {
                 APP.aldstat.sendEvent('进入详情页面', {
                   "用户名字": "用户未授权",
                   "用户头像": "用户未授权",
                   "文章标题": e.name,
                   "文章ID": e.id
                 });
-                // }
+                }
               } catch (err) {
                 console.log("阿里丁记录文章标题失败", err)
               }
             }
         }), a.default.setNavBarTitle();
     },
+    
     onLoad: function(t) {
+      if (APP.isCallback) {
         t.aid && this.setData({
-            aid: t.aid
+          aid: t.aid
         }), this._init();
+      } else {
+        APP.callbackEvent = res => {
+          t.aid && this.setData({
+            aid: t.aid
+          }), this._init();
+        };
+      }
+        
     },
     onHide: function() {
         this.setData({

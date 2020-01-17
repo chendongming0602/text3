@@ -3,6 +3,8 @@
     "enablePullDownRefresh": true,
     "usingComponents": {
         "banner-swiper": "../../components/bannerSwiper/swiper",
-        "ad-comp": "../../components/ad/ad"
+        "ad-comp": "../../components/ad/ad",
+        "frame": "../../components/frame/frame",
+        "login": "../../components/login/login"
     }
 }

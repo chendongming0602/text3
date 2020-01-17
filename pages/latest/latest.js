@@ -7,14 +7,27 @@ function t(t) {
 var a = t(require("../../service/app.setting.js")), e = t(require("../../config/api.config.js")), i = t(require("../../service/service.js"));
 
 getApp();
-
+const APP=getApp();
 Page({
     data: {
-        pageConfig: null,
-        lists: null,
-        pageTotal: 0,
-        currentPage: 0,
-        itemNum: 5
+      pageConfig: null,
+      lists: null,
+      pageTotal: 0,
+      currentPage: 0,
+      itemNum: 5,
+      isPower: true,
+      isCheck: false
+    },
+    loginEvent() {
+      this.setData({
+        isPower: true
+      });
+    },
+    allS() {
+      this.setData({
+        isPower: APP.userInfo.isPower,
+        isCheck: APP.isCheck
+      });
     },
     _init: function() {
         var t = this;
@@ -32,10 +45,18 @@ Page({
         }), a.default.setNavBarTitle();
     },
     onLoad: function(t) {
-        this._init();
+      this._init();
     },
     onReady: function() {},
-    onShow: function() {},
+    onShow: function() {
+      if (APP.isCallback) {
+        this.allS();
+      } else {
+        APP.callbackEvent = res => {
+          this.allS();
+        };
+      };
+    },
     onHide: function() {},
     onUnload: function() {},
     onPullDownRefresh: function() {},

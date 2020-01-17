@@ -5,11 +5,24 @@ function e(e) {
 }
 
 var t = e(require("../../config/api.config.js")), a = e(require("../../service/service.js")), n = e(require("../../service/app.setting.js"));
-
+const APP=getApp();
 Page({
     data: {
-        categories: null,
-        pageConfig: null
+      categories: null,
+      pageConfig: null,
+      isPower: true,
+      isCheck: false
+    },
+    loginEvent() {
+      this.setData({
+        isPower: true
+      });
+    },
+    allS() {
+      this.setData({
+        isPower: APP.userInfo.isPower,
+        isCheck: APP.isCheck
+      });
     },
     _init: function() {
         var e = this;
@@ -43,7 +56,15 @@ Page({
         this._init();
     },
     onReady: function() {},
-    onShow: function() {},
+    onShow: function() {
+      if (APP.isCallback) {
+        this.allS();
+      } else {
+        APP.callbackEvent = res => {
+          this.allS();
+        };
+      };
+    },
     onShareAppMessage: function() {
         return {
             path: "/pages/index/index"
