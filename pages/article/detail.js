@@ -72,6 +72,7 @@ Page({
                     thumb: e.thumb,
                     titleColor: e.title_color || "",
                     share_title: e.share_title || "",
+                    share_img: e.share_img || "",
                     audio: e.audio || "",
                     author: e.author || "",
                     isLoading: !1,
@@ -135,7 +136,7 @@ Page({
         }), {
             title: t,
             path: "/pages/article/detail?aid=" + this.data.aid,
-            imageUrl: this.data.thumb || ""
+          imageUrl: this.data.share_img||this.data.thumb
         };
     },
     _addFav: function() {

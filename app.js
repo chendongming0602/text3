@@ -81,7 +81,7 @@ App({
     },
     globalData: {
         authSettings: null,
-        version: 1.2
+        version: 1.3
     },
     siteInfo: require("siteinfo.js")
 });
